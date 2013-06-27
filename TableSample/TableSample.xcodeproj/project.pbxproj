@@ -18,6 +18,7 @@
 		FCA68B05177BBE6000995121 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA68B04177BBE6000995121 /* Default-568h@2x.png */; };
 		FCA68B08177BBE6000995121 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA68B06177BBE6000995121 /* MainStoryboard.storyboard */; };
 		FCA68B0B177BBE6000995121 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA68B0A177BBE6000995121 /* ViewController.m */; };
+		FCA68B13177BC07000995121 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA68B12177BC07000995121 /* Todo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		FCA68B07177BBE6000995121 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FCA68B09177BBE6000995121 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FCA68B0A177BBE6000995121 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FCA68B11177BC07000995121 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		FCA68B12177BC07000995121 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				FCA68B06177BBE6000995121 /* MainStoryboard.storyboard */,
 				FCA68B09177BBE6000995121 /* ViewController.h */,
 				FCA68B0A177BBE6000995121 /* ViewController.m */,
+				FCA68B11177BC07000995121 /* Todo.h */,
+				FCA68B12177BC07000995121 /* Todo.m */,
 				FCA68AF5177BBE6000995121 /* Supporting Files */,
 			);
 			path = TableSample;
@@ -176,6 +181,7 @@
 				FCA68AFB177BBE6000995121 /* main.m in Sources */,
 				FCA68AFF177BBE6000995121 /* AppDelegate.m in Sources */,
 				FCA68B0B177BBE6000995121 /* ViewController.m in Sources */,
+				FCA68B13177BC07000995121 /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
