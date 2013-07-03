@@ -15,21 +15,44 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hiW-b3-YTU">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TodoCell" textLabel="pzT-s8-WJd" style="IBUITableViewCellStyleDefault" id="LQM-Xw-QVD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TodoCell" id="LQM-Xw-QVD" customClass="TodoTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzT-s8-WJd">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-GZ-VDg">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="4bG-41-bUj"/>
+                                                        <constraint firstAttribute="width" constant="180" id="y63-70-mc1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="9999-99-99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ec-oZ-0lm">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="VQB-gj-qCt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Yw3-GZ-VDg" firstAttribute="top" secondItem="LQM-Xw-QVD" secondAttribute="top" constant="5" id="IC4-ec-ShZ"/>
+                                            <constraint firstItem="3Ec-oZ-0lm" firstAttribute="top" secondItem="Yw3-GZ-VDg" secondAttribute="top" type="default" id="LHa-Lk-z1B"/>
+                                            <constraint firstItem="Yw3-GZ-VDg" firstAttribute="leading" secondItem="LQM-Xw-QVD" secondAttribute="leading" constant="20" type="default" id="NWX-vj-Tu7"/>
+                                            <constraint firstItem="3Ec-oZ-0lm" firstAttribute="bottom" secondItem="Yw3-GZ-VDg" secondAttribute="bottom" type="default" id="RYc-OC-ejH"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Ec-oZ-0lm" secondAttribute="trailing" constant="20" type="default" id="jeU-bS-ACy"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dueLabel" destination="3Ec-oZ-0lm" id="7WD-8i-qRb"/>
+                                            <outlet property="taskLabel" destination="Yw3-GZ-VDg" id="HBq-LE-j1A"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -54,6 +77,13 @@
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TodoTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodoTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="taskLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

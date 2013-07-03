@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC53A39F1783C5CA0023A3C3 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = FC53A39E1783C5CA0023A3C3 /* smile.png */; };
+		FC53A3A21783CB5A0023A3C3 /* TodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC53A3A11783CB5A0023A3C3 /* TodoTableViewCell.m */; };
 		FCA68AEF177BBE6000995121 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA68AEE177BBE6000995121 /* UIKit.framework */; };
 		FCA68AF1177BBE6000995121 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA68AF0177BBE6000995121 /* Foundation.framework */; };
 		FCA68AF3177BBE6000995121 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA68AF2177BBE6000995121 /* CoreGraphics.framework */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC53A39E1783C5CA0023A3C3 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		FC53A3A01783CB5A0023A3C3 /* TodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoTableViewCell.h; sourceTree = "<group>"; };
+		FC53A3A11783CB5A0023A3C3 /* TodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoTableViewCell.m; sourceTree = "<group>"; };
 		FCA68AEB177BBE6000995121 /* TableSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA68AEE177BBE6000995121 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCA68AF0177BBE6000995121 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +94,8 @@
 				FCA68AFD177BBE6000995121 /* AppDelegate.h */,
 				FCA68AFE177BBE6000995121 /* AppDelegate.m */,
 				FCA68B06177BBE6000995121 /* MainStoryboard.storyboard */,
+				FC53A3A01783CB5A0023A3C3 /* TodoTableViewCell.h */,
+				FC53A3A11783CB5A0023A3C3 /* TodoTableViewCell.m */,
 				FCA68B09177BBE6000995121 /* ViewController.h */,
 				FCA68B0A177BBE6000995121 /* ViewController.m */,
 				FCA68B11177BC07000995121 /* Todo.h */,
@@ -101,6 +108,7 @@
 		FCA68AF5177BBE6000995121 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC53A39E1783C5CA0023A3C3 /* smile.png */,
 				FCA68AF6177BBE6000995121 /* TableSample-Info.plist */,
 				FCA68AF7177BBE6000995121 /* InfoPlist.strings */,
 				FCA68AFA177BBE6000995121 /* main.m */,
@@ -168,6 +176,7 @@
 				FCA68B03177BBE6000995121 /* Default@2x.png in Resources */,
 				FCA68B05177BBE6000995121 /* Default-568h@2x.png in Resources */,
 				FCA68B08177BBE6000995121 /* MainStoryboard.storyboard in Resources */,
+				FC53A39F1783C5CA0023A3C3 /* smile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +191,7 @@
 				FCA68AFF177BBE6000995121 /* AppDelegate.m in Sources */,
 				FCA68B0B177BBE6000995121 /* ViewController.m in Sources */,
 				FCA68B13177BC07000995121 /* Todo.m in Sources */,
+				FC53A3A21783CB5A0023A3C3 /* TodoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +314,7 @@
 				FCA68B10177BBE6000995121 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

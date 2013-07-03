@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Todo.h"
+#import "TodoTableViewCell.h"
 
 @interface ViewController ()
 
@@ -47,12 +48,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell" forIndexPath:indexPath];
+//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell" forIndexPath:indexPath];
+    TodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell" forIndexPath:indexPath];
     
     Todo * todo = _todos[indexPath.row];
     NSLog(@"-- cellForRowAtIndexPath %d %@", indexPath.row, todo);
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@", todo.dueString, todo.task];
+//    cell.textLabel.text = todo.task;
+//    cell.detailTextLabel.text = todo.dueString;
+    cell.taskLabel.text = todo.task;
+    cell.dueLabel.text = todo.dueString;
+    
+//    cell.imageView.image = [UIImage imageNamed:@"smile.png"];
+    
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
     return cell;
 }
 
