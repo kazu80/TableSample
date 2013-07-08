@@ -6,22 +6,26 @@
 //  Copyright (c) 2013年 kazuyoshi kawakami. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TodoMasterViewController.h"
 #import "Todo.h"
 #import "TodoTableViewCell.h"
+#import "TodoDetailViewController.h"
 
-@interface ViewController ()
+@interface TodoMasterViewController ()
 
 @property (strong, nonatomic) NSMutableArray * todos;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSIndexPath *updateIndexPath;
 
 @end
 
-@implementation ViewController
+@implementation TodoMasterViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setupTodo];
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,5 +71,37 @@
     
     return cell;
 }
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [_tableView setEditing:editing animated:animated];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"-- commitEditingStyle %d", indexPath.row);
+        [_todos removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    TodoDetailViewController *detailViewController = [segue destinationViewController];
+    _updateIndexPath = _tableView.indexPathForSelectedRow;
+    [self.tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
+    NSLog(@"-- prepareForSegue %@ %d", [segue identifier], _updateIndexPath.row);
+    detailViewController.todo = _todos[_updateIndexPath.row];
+}
+
+- (IBAction)todoUpdated:(UIStoryboardSegue *)segue
+{
+    NSLog(@"-- todoUpdated %@", _updateIndexPath);
+    [_tableView reloadRowsAtIndexPaths:@[_updateIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
 
 @end
