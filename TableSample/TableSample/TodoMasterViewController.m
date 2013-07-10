@@ -90,16 +90,30 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     TodoDetailViewController *detailViewController = [segue destinationViewController];
-    _updateIndexPath = _tableView.indexPathForSelectedRow;
-    [self.tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
+    
+    if ([[segue identifier] isEqualToString:@"new"]) {
+        detailViewController.todo = [Todo todoWithTask:@"" dueDateAfter:0];
+        _updateIndexPath = [NSIndexPath indexPathForRow:[_todos count] inSection:0];
+    } else {
+        _updateIndexPath = _tableView.indexPathForSelectedRow;
+        detailViewController.todo = _todos[_updateIndexPath.row];
+        [self.tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
+    }
+    
     NSLog(@"-- prepareForSegue %@ %d", [segue identifier], _updateIndexPath.row);
-    detailViewController.todo = _todos[_updateIndexPath.row];
 }
 
 - (IBAction)todoUpdated:(UIStoryboardSegue *)segue
 {
-    NSLog(@"-- todoUpdated %@", _updateIndexPath);
-    [_tableView reloadRowsAtIndexPaths:@[_updateIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+    NSLog(@"-- todoUpdated %d", _updateIndexPath.row);
+    if (_updateIndexPath.row == [_todos count]) {
+        TodoDetailViewController * detailViewController = [segue sourceViewController];
+        [_todos addObject:detailViewController.todo];
+        [_tableView insertRowsAtIndexPaths:@[_updateIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+        
+    } else {
+        [_tableView reloadRowsAtIndexPaths:@[_updateIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }
 }
 
 
